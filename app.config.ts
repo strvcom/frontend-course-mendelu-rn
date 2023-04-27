@@ -3,7 +3,7 @@ import type { ExpoConfig, IOS, Android } from '@expo/config-types'
 // see https://github.com/motdotla/dotenv#how-do-i-use-dotenv-with-import
 import * as dotenv from 'dotenv'
 
-import type { OtaUpdatePriority } from 'src/hooks/useOTAUpdate'
+import type { OtaUpdatePriority } from 'src/utils/useOTAUpdate'
 
 dotenv.config()
 
@@ -40,10 +40,8 @@ const { name, appIdentifier, icon } = getEnvironmentInfo()
 const plugins: ExpoConfig['plugins'] = environment === 'dev' ? ['expo-community-flipper'] : []
 
 // UPDATE VERSION AND BUILDNUMBER
-const version = '0.1.0'
 const buildNumber = 1
-// calculated from version to replace patch version with 0: 0.1.1 >> 0.1.0 -- read Readme
-const runtimeVersion = `${version.split('.').slice(0, 2).join('.')}.0`
+
 // this can be length of splashscreen during which app can download and run OTA update version
 const fallbackToCacheTimeout = 0
 const otaUpdatePriority: OtaUpdatePriority = 'normal'
@@ -51,8 +49,6 @@ const otaUpdatePriority: OtaUpdatePriority = 'normal'
 const expoConfig: ExpoConfig = {
   name,
   slug: 'template-react-native-expo',
-  version,
-  runtimeVersion,
   orientation: 'portrait',
   icon,
   userInterfaceStyle: 'light',

@@ -54,11 +54,7 @@ const getIsAppOutdated = async (_variant: UpdateVariant) => {
       supportedMinor === installedMinor &&
       supportedPatch > installedPatch
 
-    if (hasMajorDiff || hasMinorDif || hasPatchDif) {
-      return true
-    }
-
-    return false
+    return hasMajorDiff || hasMinorDif || hasPatchDif
   } catch (error) {
     // crashlytics.recordCatchError(error, `${variant} version flag could not be fetched`)
     return false

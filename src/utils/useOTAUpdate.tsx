@@ -3,7 +3,7 @@ import * as Updates from 'expo-updates'
 import { useCallback, useEffect, useState } from 'react'
 import { Alert } from 'react-native'
 
-import { useOnForeground } from 'src/hooks/useOnForeground'
+import { useOnForeground } from 'src/utils/useOnForeground'
 
 export type OtaUpdatePriority = 'high' | 'normal'
 export const useOTAUpdates = () => {

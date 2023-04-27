@@ -9,9 +9,7 @@ export type BottomStackParamList = {
 }
 
 export type RootStackParamList = {
-  [Routes.LOGIN]: undefined
   [Routes.BOTTOM_STACK]: { screen?: keyof BottomStackParamList }
-  [Routes.NESTED_SCREEN]: { isProfile: boolean }
 }
 
 export type ResetState = PartialState<NavigationState<RootStackParamList>>
