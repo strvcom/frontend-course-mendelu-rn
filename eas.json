@@ -1,0 +1,39 @@
+{
+  "cli": {
+    "version": ">= 2.3.0"
+  },
+  "build": {
+    "development": {
+      "env": {
+        "APP_ENV": "dev"
+      },
+      "developmentClient": true,
+      "distribution": "internal",
+      "channel": "dev"
+    },
+    "staging": {
+      "env": {
+        "APP_ENV": "staging"
+      },
+      "distribution": "internal",
+      "channel": "staging"
+    },
+    "staging-development": {
+      "env": {
+        "APP_ENV": "staging"
+      },
+      "distribution": "internal",
+      "developmentClient": true,
+      "channel": "staging"
+    },
+    "production": {
+      "env": {
+        "APP_ENV": "production"
+      },
+      "channel": "production"
+    }
+  },
+  "submit": {
+    "production": {}
+  }
+}
