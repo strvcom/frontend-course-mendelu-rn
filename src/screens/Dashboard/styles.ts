@@ -1,9 +1,10 @@
 import { StyleSheet } from 'react-native'
 
-import { ms } from '../../utils/scale'
+import { windowHeight } from '../../constants/dimensions'
 
 export const styles = StyleSheet.create({
-  text: {
-    fontSize: ms(20),
+  scrollView: {
+    height: windowHeight,
+    paddingHorizontal: 12,
   },
 })
