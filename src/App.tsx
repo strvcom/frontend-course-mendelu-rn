@@ -3,22 +3,16 @@ import { useFlipper } from '@react-navigation/devtools'
 import { NavigationContainer } from '@react-navigation/native'
 import { StatusBar } from 'expo-status-bar'
 import { GestureHandlerRootView } from 'react-native-gesture-handler'
-import { initializeMMKVFlipper } from 'react-native-mmkv-flipper-plugin'
 import { SafeAreaProvider } from 'react-native-safe-area-context'
 
 import { ForcedUpdate } from 'src/components/ForcedUpdate'
 import { OfflineMessage } from 'src/components/OfflineMessage'
-import { useCachedResources } from 'src/hooks/useCachedResources'
-import { useOTAUpdates } from 'src/hooks/useOTAUpdate'
-import { useStoreUpdate } from 'src/hooks/useStoreUpdate'
 import { RootStack } from 'src/navigation/RootStack'
 import { navigationRef } from 'src/navigation/utils'
 import { setFontScaling } from 'src/utils/setFontScaling'
-import { storage } from 'src/utils/storage'
-
-if (__DEV__) {
-  initializeMMKVFlipper({ default: storage })
-}
+import { useCachedResources } from 'src/utils/useCachedResources'
+import { useOTAUpdates } from 'src/utils/useOTAUpdate'
+import { useStoreUpdate } from 'src/utils/useStoreUpdate'
 
 setFontScaling()
 

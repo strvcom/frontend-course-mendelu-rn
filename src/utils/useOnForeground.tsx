@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import type { AppStateStatus } from 'react-native'
 import { AppState } from 'react-native'
 
-import { useLatestValue } from 'src/hooks/useLatest'
+import { useLatestValue } from 'src/utils/useLatest'
 
 export function useOnForeground(onForeground: () => void, includeFirstLoad = false) {
   const [appState, setAppState] = useState(AppState.currentState)
